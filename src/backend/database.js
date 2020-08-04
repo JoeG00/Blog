@@ -2,18 +2,16 @@ const mongoose = require('mongoose')
 
 const URI= 'mongodb://localhost/blog'
 
-mongoose.connect(URI)
-    .then(db=> console.log('DB is connected') )
-    .catch(err=> console.error(err))
+mongoose.connect(URI, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+});
 
-const{Schema}=mongoose;
-const ArticleSchema=new Schema(
-    {
-        title: {type:String, required:true },
-        content:{type:String, required:true}
+const connection = mongoose.connection;
 
-    })
+connection.once('open', () => {
+    console.log('Database is connected');
+});
 
-module.exports=mongoose.model('Task', TaskSchema);
-
-// module.exports=mongoose;
+module.exports=mongoose;
