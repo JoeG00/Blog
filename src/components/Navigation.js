@@ -6,12 +6,11 @@ export class Navigation extends Component {
     render() {
         return (
             <div>
-                <nav class="navbar navbar-light bg-light">
+                <nav className="navbar navbar-light bg-light">
                     <Link to="/">My Blog</Link>
                     <ul>
                     <Link to="/create">Create Post</Link>
-                    <Link to="/"></Link>
-                    </ul>
+                    <Link to="/manageposts" style={{margin:10}}>Manage Posts</Link>                    </ul>
                 </nav>
             </div>
         )

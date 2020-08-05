@@ -8,6 +8,9 @@ router.route('/')
 
 router.route('/:id')
     .get(writer.getArticle)
+    .delete(writer.delteArticle)
+    .put(writer.updateArticle)
+
 router.route('/createpost')
     .post(writer.createPost)
 

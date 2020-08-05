@@ -1,0 +1,18 @@
+.all-articles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: left;
+    text-align: left;
+
+}
+
+.individual-article ul li{
+    list-style: none;
+   
+
+}
+
+.individual-article ul {
+    background-color: antiquewhite;
+}

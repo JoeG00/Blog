@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ViewPosts from "./ViewPosts"
+import {ViewPosts} from "./ViewPosts"
 
 
 
@@ -8,6 +8,8 @@ export class Mainview extends Component {
         return (
             <div>
                 <ViewPosts/>
+
+
 
             </div>
         )

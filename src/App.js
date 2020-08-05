@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation"
 import CreatePost from "./components/CreatePost"
 import MainView from "./components/Mainview"
 import ViewPosts from "./components/ViewPosts"
+import ManagePosts from './components/ManagePosts';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <div className="container">
           <Route path ="/" exact component={MainView} ></Route>
           <Route path ="/create" component={CreatePost} ></Route>
-          <Route path ="/viewposts" component={ViewPosts} ></Route>
+          <Route path ="/manageposts" component={ManagePosts} ></Route>
         </div>
       </Router>
 

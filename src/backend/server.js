@@ -12,7 +12,7 @@ l=[]
 // app.use(cors)
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/', require('./routes/routes'))
+app.use('/api', require('./routes/routes'))
 
 
 

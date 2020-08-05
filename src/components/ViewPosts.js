@@ -1,14 +1,61 @@
 import React, { Component } from 'react'
 import "./css/viewposts.css"
 
+
 export class ViewPosts extends Component {
+    constructor(){
+        super();
+        this.state={
+            posts:[]
+        }
+    }
+
+    componentDidMount(){
+        this.fetcharticles()
+    }
+
+
+    fetcharticles= ()=>{
+        fetch('/api')
+        .then(res => res.json())
+        .then(data => {
+            this.setState({posts: data.reverse()})
+        })
+        console.log(this.state.posts)
+
+    }
+
+    update=() =>{
+        console.log("1")
+
+    }
+    delete=() =>{
+        console.log("2")
+
+
+    }
+    
+
+
     render() {
+        
         return (
             <div className="container">
                 <div className="article">
-                    <p>Sample article</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia facilis ab earum eius odit quasi distinctio esse, ducimus, excepturi repellendus dolorem nostrum, iusto at? Praesentium dicta ducimus inventore? Quia fuga quam est, in placeat autem omnis sed ad at nam! Similique ut est ea architecto quis sed natus nihil dolorum! Cupiditate corporis a minus? Dignissimos a veritatis sed nesciunt nihil ratione aspernatur, earum totam tempore illum odio neque natus distinctio officiis possimus, debitis rerum delectus corrupti. Harum, soluta similique officia optio quidem veniam temporibus omnis, hic magni perferendis architecto atque ipsam accusantium ad corrupti quis ipsum. Molestias labore maiores et.</p>
-
+                    {/* <button onClick={this.fetcharticles}>Clickme</button> */}
+                </div>
+                
+                <div className="all-articles">
+                    {this.state.posts.map(post=>(
+                        <div className="individual-article">
+                            <ul key={post.id}>
+                                <li><h1>{post.title}</h1></li>
+                                <li><p>{post.createdAt}</p></li>
+                                <li> <h3>{post.author}</h3></li>
+                                <li><p>{post.content}</p></li>
+                            </ul>
+                        </div>
+                        ))}
                 </div>
 
                 
@@ -18,3 +65,4 @@ export class ViewPosts extends Component {
 }
 
 export default ViewPosts
+

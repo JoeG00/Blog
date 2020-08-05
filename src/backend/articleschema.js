@@ -3,7 +3,10 @@ const {Schema, model } = require ("mongoose")
 const Article= new Schema (
     {
         title:{ type: String, required: true},
+        author:{ type: String, required: true},
         content: { type: String, required: true},
+        // userdate:{ type: String, required: true},
+
         date:Date,
     },{
         timestamps:true,
